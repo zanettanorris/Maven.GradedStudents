@@ -39,6 +39,38 @@ public class StudentTest {
        Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void getNumberOfExamsTakenTest() {
+       Integer expected = 4;
+       Integer actual = student.getNumberOfExamsTaken();
+       Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void addExamScoreTest() {
+        String expected = "Exam Scores:\n" +
+                "Exam 1 -> 100\n" +
+                "Exam 2 -> 90\n" +
+                "Exam 3 -> 95\n" +
+                "Exam 4 -> 85\n" +
+                "Exam 5 -> 100";
+        student.addExamScore(100.0);
+        String actual = student.getExamScores();
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void setExamScoresTest(){
+        String expected = "Exam Scores:\n" +
+                "Exam 1 -> 90\n" +
+                "Exam 2 -> 90\n" +
+                "Exam 3 -> 95\n" +
+                "Exam 4 -> 85";
+        student.setExamScore(0, 90);
+        String actual = student.getExamScores();
+
+        Assert.assertEquals(expected, actual);
+    }
+
 
 
 }

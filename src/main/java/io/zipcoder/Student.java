@@ -59,4 +59,12 @@ public class Student {
         }
         return output;
     }
+    public void addExamScore(double examScore) {
+        examScores.add(examScore);
+    }
+
+    public void setExamScore(int examNumber, double newScore){
+        examScores.set(examNumber, newScore);
+    }
+    
 }
