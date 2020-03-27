@@ -49,22 +49,40 @@ public class Student {
         return examScores.size();
     }
 
-    public String getExamScores(){
+    public String getExamScores() {
         String output = "Exam Scores:\n";
-        for (int i = 0; i < examScores.size(); i++){
-            output += "Exam " + (i+1) + " -> " + Math.round(examScores.get(i));
-            if ( i != examScores.size()-1){
-                output +=  "\n";
+        for (int i = 0; i < examScores.size(); i++) {
+            output += "Exam " + (i + 1) + " -> " + Math.round(examScores.get(i));
+            if (i != examScores.size() - 1) {
+                output += "\n";
             }
         }
         return output;
     }
+
     public void addExamScore(double examScore) {
         examScores.add(examScore);
     }
 
-    public void setExamScore(int examNumber, double newScore){
+    public void setExamScore(int examNumber, double newScore) {
         examScores.set(examNumber, newScore);
     }
-    
+
+    public Double getAverageExamScore() {
+        Double sumOfExamScores = 0.0;
+        for (int i = 0; i < examScores.size(); i++) {
+            sumOfExamScores += examScores.get(i);
+        }
+        Double averageOfScores = sumOfExamScores / getNumberOfExamsTaken();
+        return averageOfScores.doubleValue();
+    }
+
+    @Override
+    public String toString() {
+
+      return(  "```\n" + "Student Name: " + firstName + " " + lastName + "\n" + "> Average " +
+                "Score: " + getAverageExamScore() + "\n" + "> " + getExamScores()+ "\n" + "```");
+    }
+
+    //***** Intermission, End of Part 1******
 }

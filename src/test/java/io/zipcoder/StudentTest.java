@@ -71,6 +71,20 @@ public class StudentTest {
         Assert.assertEquals(expected, actual);
     }
 
-
+@Test
+    public void toStringTest(){
+       String expected =
+               "```\n" +
+               "Student Name: Jimmy Choo\n" +
+               "> Average Score: 92\n" +
+               "> Exam Scores:\n" +
+               "Exam 1 -> 100\n" +
+               "Exam 2 -> 90\n" +
+               "Exam 3 -> 95\n" +
+               "Exam 4 -> 85\n" +
+               "```";
+       String actual = student.toString();
+       Assert.assertEquals(expected, actual);
+}
 
 }
